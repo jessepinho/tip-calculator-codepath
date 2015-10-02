@@ -18,7 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Settings";
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSInteger defaultTipAmount = [defaults integerForKey:@"defaultTipIndex"];
     [self.defaultTipControl setSelectedSegmentIndex:defaultTipAmount];
@@ -34,6 +33,10 @@
     NSInteger tipIndex = [self.defaultTipControl selectedSegmentIndex];
     [defaults setInteger:tipIndex forKey:@"defaultTipIndex"];
     [defaults synchronize];
+}
+
+- (IBAction)dismiss:(id)sender {
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

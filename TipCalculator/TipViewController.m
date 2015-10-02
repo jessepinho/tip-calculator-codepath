@@ -21,12 +21,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"TipTapp";
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(defaultsChanged:) name:NSUserDefaultsDidChangeNotification object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [self setDefaultTipIndex];
-    [self updateValues];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -56,9 +56,14 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSInteger defaultTipIndex = [defaults integerForKey:@"defaultTipIndex"];
     [self.tipControl setSelectedSegmentIndex:defaultTipIndex];
+    [self updateValues];
 }
 
 - (IBAction)tipAmountChanged:(UISegmentedControl *)sender {
     [self updateValues];
+}
+
+- (void)defaultsChanged:(NSNotification *)notification {
+    [self setDefaultTipIndex];
 }
 @end
