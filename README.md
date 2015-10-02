@@ -4,7 +4,7 @@ TipTapp is a tip calculator application for iOS.
 
 Submitted by: Jesse Pinho
 
-Time spent: **X** hours spent in total
+Time spent: 3 hours spent in total
 
 ## User Stories
 
@@ -27,7 +27,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![Video walkthrough](http://i.imgur.com/kQ6qTVs.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
