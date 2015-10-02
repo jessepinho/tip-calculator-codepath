@@ -29,6 +29,7 @@
 		3AC5B9E01BBD905F00A9E56A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AC5B9E31BBD905F00A9E56A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AC5B9E51BBD905F00A9E56A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AE54A6D1BBF0FCA006F4E41 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +46,7 @@
 		3AC5B9C81BBD905F00A9E56A = {
 			isa = PBXGroup;
 			children = (
+				3AE54A6D1BBF0FCA006F4E41 /* README.md */,
 				3AC5B9D31BBD905F00A9E56A /* TipCalculator */,
 				3AC5B9D21BBD905F00A9E56A /* Products */,
 			);
