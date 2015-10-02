@@ -76,9 +76,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="LqJ-Cb-11i" appends="YES" id="nOm-ax-o0U"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="Jfz-1n-Qw4">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="8w2-M5-fmR">
@@ -95,11 +92,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="LqJ-Cb-11i">
-                    <connections>
-                        <action selector="onTap:" destination="BYZ-38-t0r" id="XgK-VQ-kHr"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="720" y="352"/>
         </scene>

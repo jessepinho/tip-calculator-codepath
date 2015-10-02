@@ -29,6 +29,10 @@
     [self updateValues];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [self.billTextField becomeFirstResponder];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -36,10 +40,6 @@
 
 - (IBAction)billChanged:(id)sender {
     [self updateValues];
-}
-
-- (IBAction)onTap:(UITapGestureRecognizer *)sender {
-    [self.view endEditing:YES];
 }
 
 - (void)updateValues {
