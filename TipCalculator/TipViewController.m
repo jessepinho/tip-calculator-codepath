@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Tip Calculator";
+    self.title = @"TipTapp";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
