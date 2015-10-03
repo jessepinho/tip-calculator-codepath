@@ -19,7 +19,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$3.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mLS-at-RwP">
-                                <rect key="frame" x="194" y="239" width="106" height="21"/>
+                                <rect key="frame" x="48" y="239" width="252" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
@@ -27,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$103.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mG8-xx-baa">
-                                <rect key="frame" x="161" y="278" width="139" height="50"/>
+                                <rect key="frame" x="48" y="278" width="252" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
@@ -35,7 +35,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lMQ-S9-aY8">
-                                <rect key="frame" x="20" y="239" width="40" height="21"/>
+                                <rect key="frame" x="20" y="239" width="29" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
@@ -80,7 +80,7 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="=" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cSC-EJ-SZJ">
-                                <rect key="frame" x="20" y="278" width="66" height="50"/>
+                                <rect key="frame" x="20" y="278" width="29" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
@@ -105,6 +105,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="billTextField" destination="F61-gP-id9" id="ERl-v7-yhg"/>
+                        <outlet property="currencySymbolLabel" destination="u6s-9X-XUc" id="sxD-ZJ-rYR"/>
                         <outlet property="tipControl" destination="Hub-Ws-wzc" id="hUB-ug-V0A"/>
                         <outlet property="tipLabel" destination="mLS-at-RwP" id="o0v-5n-uTw"/>
                         <outlet property="totalLabel" destination="mG8-xx-baa" id="5Py-VK-sCh"/>
