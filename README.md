@@ -23,12 +23,13 @@ The following **additional** features are implemented:
 
 * [X] The tip and total amounts update as the user types (rather than just when they tap the screen).
 * [X] The Settings screen is now a modal that fades in over the main screen. The default tip amount control appears to remain in the same place in the Settings screen as in the Tip screen, for user comprehension.
+* [X] The launch screen matches the UI, to make for a more smooth launch experience.
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-![Video walkthrough](http://i.imgur.com/sL5Ty6z.gif)
+![Video walkthrough](http://i.imgur.com/1xrSxvJ.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
