@@ -4,7 +4,7 @@ TipTapp is a tip calculator application for iOS.
 
 Submitted by: Jesse Pinho
 
-Time spent: 3 hours spent in total
+Time spent: 6 hours spent in total
 
 ## User Stories
 
