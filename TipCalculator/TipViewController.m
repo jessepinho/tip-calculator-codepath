@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tipControl;
 @property (weak, nonatomic) IBOutlet UILabel *currencySymbolLabel;
 @property (strong) NSNumberFormatter *currencyFormatter;
+@property (weak, nonatomic) IBOutlet UIView *tipUIContainer;
 
 @end
 
@@ -30,6 +31,7 @@
 
     [self configureCurrencyFormatter];
     [self configureCurrencySymbolLabel];
+    [self setUpTipUIContainer];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -47,6 +49,47 @@
 
 - (IBAction)billChanged:(id)sender {
     [self updateValues];
+    [self animateTipUIContainer];
+}
+
+- (void)setUpTipUIContainer {
+    [self.tipUIContainer setAlpha:0.0];
+    CGPoint center = self.tipUIContainer.center;
+    CGPoint newCenter = CGPointMake(center.x, center.y + 100);
+    [self.tipUIContainer setCenter:newCenter];
+}
+
+- (void)animateTipUIContainer {
+    if ([self shouldAnimateTipUIContainer]) {
+        [UIView animateWithDuration:0.2 animations:^{
+            self.tipUIContainer.alpha = [self getTipUIContainerAlpha];
+            self.tipUIContainer.center = [self getTipUIContainerCenter];
+        }];
+    }
+}
+
+- (CGFloat)getTipUIContainerAlpha {
+    return [self billAmountIsPresent] ? 1 : 0;
+}
+
+- (CGPoint)getTipUIContainerCenter {
+    CGPoint center = self.tipUIContainer.center;
+    CGFloat newY = [self billAmountIsPresent] ? center.y - 100 : center.y + 100;
+    return CGPointMake(center.x, newY);
+}
+
+- (BOOL)shouldAnimateTipUIContainer {
+    if (![self billAmountIsPresent] && self.tipUIContainer.alpha != 0) {
+        return YES;
+    }
+    if ([self billAmountIsPresent] && self.tipUIContainer.alpha == 0) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)billAmountIsPresent {
+    return [self.billTextField.text length] == 0 ? NO : YES;
 }
 
 - (void)configureCurrencyFormatter {
