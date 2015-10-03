@@ -22,12 +22,13 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 * [X] The tip and total amounts update as the user types (rather than just when they tap the screen).
+* [X] The Settings screen is now a modal that fades in over the main screen. The default tip amount control appears to remain in the same place in the Settings screen as in the Tip screen, for user comprehension.
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-![Video walkthrough](http://i.imgur.com/HGBTkfZ.gif)
+![Video walkthrough](http://i.imgur.com/x46W5zW.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
