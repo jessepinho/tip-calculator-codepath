@@ -14,6 +14,7 @@
 		3AC5B9DF1BBD905F00A9E56A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AC5B9DD1BBD905F00A9E56A /* Main.storyboard */; };
 		3AC5B9E11BBD905F00A9E56A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AC5B9E01BBD905F00A9E56A /* Assets.xcassets */; };
 		3AC5B9E41BBD905F00A9E56A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AC5B9E21BBD905F00A9E56A /* LaunchScreen.storyboard */; };
+		3AE34D601BC73FDA001EF8C0 /* FloatTicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AE34D5F1BC73FDA001EF8C0 /* FloatTicker.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		3AC5B9E01BBD905F00A9E56A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3AC5B9E31BBD905F00A9E56A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AC5B9E51BBD905F00A9E56A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AE34D5E1BC73FDA001EF8C0 /* FloatTicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatTicker.h; sourceTree = "<group>"; };
+		3AE34D5F1BC73FDA001EF8C0 /* FloatTicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatTicker.m; sourceTree = "<group>"; };
 		3AE54A6D1BBF0FCA006F4E41 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +77,8 @@
 				3AC5B9D41BBD905F00A9E56A /* Supporting Files */,
 				3A8463231BBD9A5C003172A9 /* SettingsViewController.h */,
 				3A8463241BBD9A5C003172A9 /* SettingsViewController.m */,
+				3AE34D5E1BC73FDA001EF8C0 /* FloatTicker.h */,
+				3AE34D5F1BC73FDA001EF8C0 /* FloatTicker.m */,
 			);
 			path = TipCalculator;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 				3AC5B9D91BBD905F00A9E56A /* AppDelegate.m in Sources */,
 				3AC5B9D61BBD905F00A9E56A /* main.m in Sources */,
 				3A8463251BBD9A5C003172A9 /* SettingsViewController.m in Sources */,
+				3AE34D601BC73FDA001EF8C0 /* FloatTicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

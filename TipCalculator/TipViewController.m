@@ -7,6 +7,7 @@
 //
 
 #import "TipViewController.h"
+#import "FloatTicker.h"
 
 @interface TipViewController ()
 
@@ -123,10 +124,14 @@
     float billAmount = [self.billTextField.text floatValue];
     NSArray *tipValues = @[@(0.15), @(0.2), @(0.25)];
     float tipAmount = [tipValues[self.tipControl.selectedSegmentIndex] floatValue] * billAmount;
-    float totalAmount = billAmount + tipAmount;
+    float currentTotalAmount = [[self.currencyFormatter numberFromString:self.totalLabel.text] floatValue];
+    float newTotalAmount = billAmount + tipAmount;
 
     self.tipLabel.text = [self.currencyFormatter stringFromNumber:[NSNumber numberWithFloat:tipAmount]];
-    self.totalLabel.text = [self.currencyFormatter stringFromNumber:[NSNumber numberWithFloat:totalAmount]];
+    FloatTicker *ticker = [[FloatTicker alloc] initWithStartAmount:currentTotalAmount endAmount:newTotalAmount onTick:^(float tickAmount) {
+        self.totalLabel.text = [self.currencyFormatter stringFromNumber:[NSNumber numberWithFloat:tickAmount]];
+    }];
+    [ticker startTicking];
 }
 
 - (void)setDefaultTipIndex {
