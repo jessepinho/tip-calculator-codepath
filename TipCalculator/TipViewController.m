@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tipControl;
 @property (weak, nonatomic) IBOutlet UILabel *currencySymbolLabel;
 @property (strong) NSNumberFormatter *currencyFormatter;
+@property (strong) NSUserDefaults *defaults;
 @property (weak, nonatomic) IBOutlet UIView *tipUIContainer;
 
 @end
@@ -25,12 +26,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(defaultsChanged:) name:NSUserDefaultsDidChangeNotification object:nil];
-
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
-
+    self.defaults = [NSUserDefaults standardUserDefaults];
+    [self.defaults addObserver:self forKeyPath:@"defaultTipIndex" options:NSKeyValueObservingOptionNew context:NULL];
     [self configureCurrencyFormatter];
     [self configureCurrencySymbolLabel];
+    [self setUpBillAmount];
     [self setUpTipUIContainer];
 }
 
@@ -44,12 +45,17 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)billChanged:(id)sender {
+    [self persistBillAmount];
     [self updateValues];
     [self animateTipUIContainer];
+}
+
+- (void)persistBillAmount {
+    [self.defaults setFloat:[self.billTextField.text floatValue] forKey:@"lastBillAmount"];
+    [self.defaults setDouble:[[NSDate date] timeIntervalSince1970] forKey:@"lastBillAmountTime"];
 }
 
 - (void)setUpTipUIContainer {
@@ -57,6 +63,7 @@
     CGPoint center = self.tipUIContainer.center;
     CGPoint newCenter = CGPointMake(center.x, center.y + 100);
     [self.tipUIContainer setCenter:newCenter];
+    [self animateTipUIContainer];
 }
 
 - (void)animateTipUIContainer {
@@ -122,17 +129,28 @@
 }
 
 - (void)setDefaultTipIndex {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSInteger defaultTipIndex = [defaults integerForKey:@"defaultTipIndex"];
+    NSInteger defaultTipIndex = [self.defaults integerForKey:@"defaultTipIndex"];
     [self.tipControl setSelectedSegmentIndex:defaultTipIndex];
     [self updateValues];
+}
+
+- (void)setUpBillAmount {
+    double lastBillAmountTime = [self.defaults doubleForKey:@"lastBillAmountTime"];
+    double timeSinceLastBillAmountTime = [[NSDate date] timeIntervalSince1970] - lastBillAmountTime;
+    int tenMinutes = 60 * 10;
+    if (lastBillAmountTime && timeSinceLastBillAmountTime < tenMinutes) {
+        float lastBillAmount = [self.defaults floatForKey:@"lastBillAmount"];
+        [self.billTextField setText:[NSString stringWithFormat:@"%.2f", lastBillAmount]];
+    }
 }
 
 - (IBAction)tipAmountChanged:(UISegmentedControl *)sender {
     [self updateValues];
 }
 
-- (void)defaultsChanged:(NSNotification *)notification {
-    [self setDefaultTipIndex];
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"defaultTipIndex"]) {
+        [self setDefaultTipIndex];
+    }
 }
 @end

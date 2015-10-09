@@ -140,7 +140,7 @@
                                     <segment title="20%"/>
                                     <segment title="25%"/>
                                 </segments>
-                                <color key="tintColor" red="0.21568627450980393" green="0.38039215686274508" blue="0.35686274509803922" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.41176470590000003" green="0.2666666667" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="defaultTipAmountChanged:" destination="RfV-t3-9FA" eventType="valueChanged" id="e8s-hT-BKF"/>
                                 </connections>
@@ -167,7 +167,7 @@
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" red="0.60784316059999999" green="0.9215686917" blue="0.89411771299999998" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.98431372549999996" green="0.67843137249999996" blue="0.43137254899999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="qFd-h5-qY3"/>
                     <connections>
