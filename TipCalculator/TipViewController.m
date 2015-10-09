@@ -56,6 +56,7 @@
 - (void)persistBillAmount {
     [self.defaults setFloat:[self.billTextField.text floatValue] forKey:@"lastBillAmount"];
     [self.defaults setDouble:[[NSDate date] timeIntervalSince1970] forKey:@"lastBillAmountTime"];
+    [self.defaults synchronize];
 }
 
 - (void)setUpTipUIContainer {
@@ -137,9 +138,9 @@
 - (void)setUpBillAmount {
     double lastBillAmountTime = [self.defaults doubleForKey:@"lastBillAmountTime"];
     double timeSinceLastBillAmountTime = [[NSDate date] timeIntervalSince1970] - lastBillAmountTime;
+    float lastBillAmount = [self.defaults floatForKey:@"lastBillAmount"];
     int tenMinutes = 60 * 10;
-    if (lastBillAmountTime && timeSinceLastBillAmountTime < tenMinutes) {
-        float lastBillAmount = [self.defaults floatForKey:@"lastBillAmount"];
+    if (lastBillAmount > 0 && lastBillAmountTime && timeSinceLastBillAmountTime < tenMinutes) {
         [self.billTextField setText:[NSString stringWithFormat:@"%.2f", lastBillAmount]];
     }
 }
